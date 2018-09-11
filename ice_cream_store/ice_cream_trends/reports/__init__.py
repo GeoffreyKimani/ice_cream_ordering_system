@@ -1,0 +1,18 @@
+from flask import Flask
+
+from ice_cream_store.ice_cream_trends.reports.ice_cream_sales_2010_2012.ice_cream_sale_2010_2012 import \
+    ice_cream_sales_bp
+from ice_cream_store.ice_cream_trends.reports.ice_cream_trends_in_different_stores.trends_in_different_stores import \
+    trends_in_different_stores_bp
+from ice_cream_store.ice_cream_trends.reports.ice_cream_trends_in_regions.trends_in_regions import trends_in_regions_bp
+from ice_cream_store.ice_cream_trends.reports.temp_sales_comparison.temp_sales_comparision import temp_sales_comparision_bp
+
+app = Flask(__name__)
+
+
+# register blueprints
+app.register_blueprint(ice_cream_sales_bp)
+app.register_blueprint(trends_in_different_stores_bp)
+app.register_blueprint(trends_in_regions_bp)
+app.register_blueprint(temp_sales_comparision_bp)
+
